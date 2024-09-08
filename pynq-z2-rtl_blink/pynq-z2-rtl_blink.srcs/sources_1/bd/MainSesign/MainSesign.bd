@@ -1,0 +1,69 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x4F83D0FC4F83D0FC",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../pynq-z2-rtl_blink.gen/sources_1/bd/MainSesign",
+      "name": "MainSesign",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2024.1.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "BasicLedController_0": ""
+    },
+    "ports": {
+      "LD": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "BTN": {
+        "direction": "I",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "BasicLedController_0": {
+        "vlnv": "xilinx.com:module_ref:BasicLedController:1.0",
+        "ip_revision": "1",
+        "xci_name": "MainSesign_BasicLedController_0_0",
+        "xci_path": "ip\\MainSesign_BasicLedController_0_0\\MainSesign_BasicLedController_0_0.xci",
+        "inst_hier_path": "BasicLedController_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BasicLedController",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "BTN": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "LD": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "BTN_1": {
+        "ports": [
+          "BTN",
+          "BasicLedController_0/BTN"
+        ]
+      },
+      "BasicLedController_0_LD": {
+        "ports": [
+          "BasicLedController_0/LD",
+          "LD"
+        ]
+      }
+    }
+  }
+}

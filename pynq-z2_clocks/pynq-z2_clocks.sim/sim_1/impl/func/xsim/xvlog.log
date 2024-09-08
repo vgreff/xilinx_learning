@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/vince/Documents/xilinx/pynq-z2_clocks/pynq-z2_clocks.sim/sim_1/impl/func/xsim/MainDesign_wrapper_func_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MainDesign
+INFO: [VRFC 10-311] analyzing module MainDesign_ClockDivider_0_0
+INFO: [VRFC 10-311] analyzing module MainDesign_ClockDivider_0_0_ClockDivider
+INFO: [VRFC 10-311] analyzing module MainDesign_ClockDivider_1_0
+INFO: [VRFC 10-311] analyzing module MainDesign_ClockDivider_1_0_ClockDivider
+INFO: [VRFC 10-311] analyzing module MainDesign_ClockDivider_2_0
+INFO: [VRFC 10-311] analyzing module MainDesign_ClockDivider_2_0_ClockDivider
+INFO: [VRFC 10-311] analyzing module MainDesign_ClockDivider_3_0
+INFO: [VRFC 10-311] analyzing module MainDesign_ClockDivider_3_0_ClockDivider
+INFO: [VRFC 10-311] analyzing module MainDesign_wrapper
+INFO: [VRFC 10-311] analyzing module glbl
