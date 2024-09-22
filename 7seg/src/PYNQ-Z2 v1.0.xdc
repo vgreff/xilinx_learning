@@ -40,14 +40,14 @@ set_property -dict { PACKAGE_PIN L19   IOSTANDARD LVCMOS33 } [get_ports { i_butt
 
 ##PmodA
 
-set_property -dict { PACKAGE_PIN Y18   IOSTANDARD LVCMOS33 } [get_ports { o_led[0] }]; #IO_L17P_T2_34 Sch=ja_p[1]
-set_property -dict { PACKAGE_PIN Y19   IOSTANDARD LVCMOS33 } [get_ports { o_led[1] }]; #IO_L17N_T2_34 Sch=ja_n[1]
-set_property -dict { PACKAGE_PIN Y16   IOSTANDARD LVCMOS33 } [get_ports { o_led[2] }]; #IO_L7P_T1_34 Sch=ja_p[2]
-set_property -dict { PACKAGE_PIN Y17   IOSTANDARD LVCMOS33 } [get_ports { o_led[3] }]; #IO_L7N_T1_34 Sch=ja_n[2]
-set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { o_led[4] }]; #IO_L12P_T1_MRCC_34 Sch=ja_p[3]
-set_property -dict { PACKAGE_PIN U19   IOSTANDARD LVCMOS33 } [get_ports { o_led[5] }]; #IO_L12N_T1_MRCC_34 Sch=ja_n[3]
-set_property -dict { PACKAGE_PIN W18   IOSTANDARD LVCMOS33 } [get_ports { o_led[6] }]; #IO_L22P_T3_34 Sch=ja_p[4]
-set_property -dict { PACKAGE_PIN W19   IOSTANDARD LVCMOS33 } [get_ports { o_led[7] }]; #IO_L22N_T3_34 Sch=ja_n[4]
+set_property -dict { PACKAGE_PIN Y18   IOSTANDARD LVCMOS33 } [get_ports { o_ledp[0] }]; #IO_L17P_T2_34 Sch=ja_p[1]
+set_property -dict { PACKAGE_PIN Y19   IOSTANDARD LVCMOS33 } [get_ports { o_ledp[1] }]; #IO_L17N_T2_34 Sch=ja_n[1]
+set_property -dict { PACKAGE_PIN Y16   IOSTANDARD LVCMOS33 } [get_ports { o_ledp[2] }]; #IO_L7P_T1_34 Sch=ja_p[2]
+set_property -dict { PACKAGE_PIN Y17   IOSTANDARD LVCMOS33 } [get_ports { o_ledp[3] }]; #IO_L7N_T1_34 Sch=ja_n[2]
+set_property -dict { PACKAGE_PIN U18   IOSTANDARD LVCMOS33 } [get_ports { o_ledp[4] }]; #IO_L12P_T1_MRCC_34 Sch=ja_p[3]
+set_property -dict { PACKAGE_PIN U19   IOSTANDARD LVCMOS33 } [get_ports { o_ledp[5] }]; #IO_L12N_T1_MRCC_34 Sch=ja_n[3]
+set_property -dict { PACKAGE_PIN W18   IOSTANDARD LVCMOS33 } [get_ports { o_ledp[6] }]; #IO_L22P_T3_34 Sch=ja_p[4]
+set_property -dict { PACKAGE_PIN W19   IOSTANDARD LVCMOS33 } [get_ports { o_ledp[7] }]; #IO_L22N_T3_34 Sch=ja_n[4]
 
 ##PmodB
 # output  [6:0]   o_digitalTube         ,//ABCDEFG

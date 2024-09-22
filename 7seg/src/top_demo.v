@@ -9,6 +9,8 @@ module top_demo (
 );
 
 wire        [3:0]   w_button        ;
+wire        [3:0]   w_digitalTube        ;
+wire                w_sel        ;
 
 // MainDesign main(
 //     .i_clk           (i_clk      ),
@@ -43,14 +45,17 @@ driver_DigitalTube digitaltube(
     .i_clk           (i_clk      ),
     .i_rst           (i_rst      ),
     .i_add           (w_button   ),
-    .o_digitalTube   (o_digitalTube),
-    .o_sel           (o_sel      )
+    .o_digitalTube   (w_digitalTube),
+    .o_sel           (w_sel      )
 );
-DegugDisplayLedController led(
-    .o_digitalTube   (o_digitalTube),
-    .o_sel           (o_sel      ),
-    .o_led           (o_led      )
+DebugDisplayLedController led(
+    .o_digitalTube   (w_digitalTube),
+    .o_sel           (w_sel      ),
+    .LD           (o_led      )
 );
+assign o_digitalTube = w_digitalTube;
+assign o_sel = w_sel;
+
 // driver_Led led(
 //     .i_clk           (i_clk      ),
 //     .i_rst           (i_rst      ),

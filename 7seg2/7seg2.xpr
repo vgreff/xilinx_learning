@@ -4,10 +4,10 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="67" Path="C:/Users/vince/Documents/xilinx/7seg/7seg.xpr">
+<Project Product="Vivado" Version="7" Minor="67" Path="C:/Users/vince/Documents/xilinx/7seg2/7seg2.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="31c8952248434a548d654bb28ec04e5b"/>
+    <Option Name="Id" Val="7afdae86eddd4fd890a5ff25fd5d4db2"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -92,59 +92,51 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/src/driver_Button.v">
+      <File Path="$PPRDIR/../7seg/src/DebugDisplayLedController.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/src/driver_Button.v"/>
-          <Attr Name="ImportTime" Val="1725219182"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/driver_DigitalTube.v">
+      <File Path="$PPRDIR/../7seg/src/driver_Button.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/src/driver_DigitalTube.v"/>
-          <Attr Name="ImportTime" Val="1725219182"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/driver_Led.v">
+      <File Path="$PPRDIR/../7seg/src/driver_DigitalTube.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/src/driver_Led.v"/>
-          <Attr Name="ImportTime" Val="1725219182"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/src/top_demo.v">
+      <File Path="$PPRDIR/../7seg/src/top_demo.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/src/top_demo.v"/>
-          <Attr Name="ImportTime" Val="1726968703"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/bd/mainDesign/mainDesign.bd">
+      <File Path="$PSRCDIR/sources_1/bd/design_vg/design_vg.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="mainDesign.bd" FileRelPathName="ip/mainDesign_processing_system7_0_0/mainDesign_processing_system7_0_0.xci">
-          <Proxy FileSetName="mainDesign_processing_system7_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_vg.bd" FileRelPathName="ip/design_vg_processing_system7_0_0/design_vg_processing_system7_0_0.xci">
+          <Proxy FileSetName="design_vg_processing_system7_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mainDesign.bd" FileRelPathName="ip/mainDesign_rst_ps7_0_100M_0/mainDesign_rst_ps7_0_100M_0.xci">
-          <Proxy FileSetName="mainDesign_rst_ps7_0_100M_0"/>
+        <CompFileExtendedInfo CompFileName="design_vg.bd" FileRelPathName="ip/design_vg_rst_ps7_0_100M_0/design_vg_rst_ps7_0_100M_0.xci">
+          <Proxy FileSetName="design_vg_rst_ps7_0_100M_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mainDesign.bd" FileRelPathName="ip/mainDesign_top_demo_0_0/mainDesign_top_demo_0_0.xci">
-          <Proxy FileSetName="mainDesign_top_demo_0_0"/>
+        <CompFileExtendedInfo CompFileName="design_vg.bd" FileRelPathName="ip/design_vg_top_demo_0_0/design_vg_top_demo_0_0.xci">
+          <Proxy FileSetName="design_vg_top_demo_0_0"/>
         </CompFileExtendedInfo>
       </File>
-      <File Path="$PGENDIR/sources_1/bd/mainDesign/hdl/mainDesign_wrapper.v">
+      <File Path="$PGENDIR/sources_1/bd/design_vg/hdl/design_vg_wrapper.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -153,12 +145,12 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="mainDesign_wrapper"/>
+        <Option Name="TopModule" Val="design_vg_wrapper"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/src/PYNQ-Z2 v1.0.xdc">
+      <File Path="$PPRDIR/../7seg/src/PYNQ-Z2 v1.0.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -173,7 +165,7 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="top_demo"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TopRTLFile" Val="$PSRCDIR/sources_1/imports/src/top_demo.v"/>
+        <Option Name="TopRTLFile" Val="$PPRDIR/../7seg/src/top_demo.v"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -191,21 +183,21 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="mainDesign_rst_ps7_0_100M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/mainDesign_rst_ps7_0_100M_0" RelGenDir="$PGENDIR/mainDesign_rst_ps7_0_100M_0">
+    <FileSet Name="design_vg_rst_ps7_0_100M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_vg_rst_ps7_0_100M_0" RelGenDir="$PGENDIR/design_vg_rst_ps7_0_100M_0">
       <Config>
-        <Option Name="TopModule" Val="mainDesign_rst_ps7_0_100M_0"/>
+        <Option Name="TopModule" Val="design_vg_rst_ps7_0_100M_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="mainDesign_top_demo_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/mainDesign_top_demo_0_0" RelGenDir="$PGENDIR/mainDesign_top_demo_0_0">
+    <FileSet Name="design_vg_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_vg_processing_system7_0_0" RelGenDir="$PGENDIR/design_vg_processing_system7_0_0">
       <Config>
-        <Option Name="TopModule" Val="mainDesign_top_demo_0_0"/>
+        <Option Name="TopModule" Val="design_vg_processing_system7_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="mainDesign_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/mainDesign_processing_system7_0_0" RelGenDir="$PGENDIR/mainDesign_processing_system7_0_0">
+    <FileSet Name="design_vg_top_demo_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/design_vg_top_demo_0_0" RelGenDir="$PGENDIR/design_vg_top_demo_0_0">
       <Config>
-        <Option Name="TopModule" Val="mainDesign_processing_system7_0_0"/>
+        <Option Name="TopModule" Val="design_vg_top_demo_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -241,7 +233,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="mainDesign_rst_ps7_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="mainDesign_rst_ps7_0_100M_0" Part="xc7z020clg400-1" ConstrsSet="mainDesign_rst_ps7_0_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mainDesign_rst_ps7_0_100M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mainDesign_rst_ps7_0_100M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mainDesign_rst_ps7_0_100M_0_synth_1" ParallelReportGen="true">
+    <Run Id="design_vg_rst_ps7_0_100M_0_synth_1" Type="Ft3:Synth" SrcSet="design_vg_rst_ps7_0_100M_0" Part="xc7z020clg400-1" ConstrsSet="design_vg_rst_ps7_0_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_vg_rst_ps7_0_100M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_vg_rst_ps7_0_100M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_vg_rst_ps7_0_100M_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -253,7 +245,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="mainDesign_top_demo_0_0_synth_1" Type="Ft3:Synth" SrcSet="mainDesign_top_demo_0_0" Part="xc7z020clg400-1" ConstrsSet="mainDesign_top_demo_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mainDesign_top_demo_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mainDesign_top_demo_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mainDesign_top_demo_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="design_vg_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_vg_processing_system7_0_0" Part="xc7z020clg400-1" ConstrsSet="design_vg_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_vg_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_vg_processing_system7_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_vg_processing_system7_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -265,7 +257,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="mainDesign_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="mainDesign_processing_system7_0_0" Part="xc7z020clg400-1" ConstrsSet="mainDesign_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mainDesign_processing_system7_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mainDesign_processing_system7_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mainDesign_processing_system7_0_0_synth_1" ParallelReportGen="true">
+    <Run Id="design_vg_top_demo_0_0_synth_1" Type="Ft3:Synth" SrcSet="design_vg_top_demo_0_0" Part="xc7z020clg400-1" ConstrsSet="design_vg_top_demo_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/design_vg_top_demo_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_vg_top_demo_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_vg_top_demo_0_0_synth_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -297,7 +289,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="mainDesign_rst_ps7_0_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="mainDesign_rst_ps7_0_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mainDesign_rst_ps7_0_100M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mainDesign_rst_ps7_0_100M_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mainDesign_rst_ps7_0_100M_0_impl_1" ParallelReportGen="true">
+    <Run Id="design_vg_rst_ps7_0_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_vg_rst_ps7_0_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_vg_rst_ps7_0_100M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_vg_rst_ps7_0_100M_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_vg_rst_ps7_0_100M_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
           <Desc>Default settings for Implementation.</Desc>
@@ -316,7 +308,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="mainDesign_top_demo_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="mainDesign_top_demo_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mainDesign_top_demo_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mainDesign_top_demo_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mainDesign_top_demo_0_0_impl_1" ParallelReportGen="true">
+    <Run Id="design_vg_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_vg_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_vg_processing_system7_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_vg_processing_system7_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_vg_processing_system7_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
           <Desc>Default settings for Implementation.</Desc>
@@ -335,7 +327,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="mainDesign_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="mainDesign_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mainDesign_processing_system7_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mainDesign_processing_system7_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mainDesign_processing_system7_0_0_impl_1" ParallelReportGen="true">
+    <Run Id="design_vg_top_demo_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="design_vg_top_demo_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="design_vg_top_demo_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/design_vg_top_demo_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/design_vg_top_demo_0_0_impl_1" ParallelReportGen="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
           <Desc>Default settings for Implementation.</Desc>
