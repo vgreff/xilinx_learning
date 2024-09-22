@@ -46,10 +46,15 @@ driver_DigitalTube digitaltube(
     .o_digitalTube   (o_digitalTube),
     .o_sel           (o_sel      )
 );
-driver_Led led(
-    .i_clk           (i_clk      ),
-    .i_rst           (i_rst      ),
-    .i_switch        (w_button   ),
+DegugDisplayLedController led(
+    .o_digitalTube   (o_digitalTube),
+    .o_sel           (o_sel      ),
     .o_led           (o_led      )
 );
+// driver_Led led(
+//     .i_clk           (i_clk      ),
+//     .i_rst           (i_rst      ),
+//     .i_switch        (w_button   ),
+//     .o_led           (o_led      )
+// );
 endmodule
