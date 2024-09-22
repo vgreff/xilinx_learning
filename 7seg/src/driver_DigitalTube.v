@@ -1,6 +1,7 @@
 /*Dynamic Drive for Two-Digit Seven-Segment Display Module*/
 module driver_DigitalTube #(
-    parameter       P_CNT       = 'd300_000 //Scanning Period for Dynamic Drive of the Seven-Segment Display
+    parameter       P_CNT       = 'd10_000_000 //Scanning Period for Dynamic Drive of the Seven-Segment Display
+    // parameter       P_CNT       = 'd300_000 //Scanning Period for Dynamic Drive of the Seven-Segment Display
 )(
     input           i_clk               ,
     input           i_rst               ,
@@ -21,7 +22,7 @@ localparam          P_8 = 7'b0000000    ;
 localparam          P_9 = 7'b0100000    ;
 localparam          P_X = 7'b1111111    ;  //Truth Table for Displaying 0-9 on the Seven-Segment Display and for Blank Display
 /***************reg*******************/
-reg        [23:0]   r_cnt               = 0;
+reg        [32:0]   r_cnt               = 0;
 reg         [3:0]   r_add               = 0;
 reg         [3:0]   r_add1d             = 0;
 reg         [3:0]   r_addBuffer         = 0;
@@ -141,7 +142,8 @@ end
 always  @(posedge i_clk or posedge i_rst)
 begin
     if(i_rst)
-        r_cntTens <= 0;
+        // r_cntTens <= 0;
+        r_cntTens <= 1;
     else if((r_cnt == P_CNT) & ((r_cntOnes + r_addBuffer) > 5'd9) & (r_cntTens == 5'd9))
         r_cntTens <= 0 ;
     else if((r_cnt == P_CNT) & ((r_cntOnes + r_addBuffer) > 5'd9))
