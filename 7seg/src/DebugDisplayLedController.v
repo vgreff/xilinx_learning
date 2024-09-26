@@ -25,5 +25,6 @@ module DebugDisplayLedController(
     input  o_sel,
     output [7:0] LD
     );
-    assign LD = {o_sel, ~o_digitalTube};
+    // assign LD = {o_sel, ~o_digitalTube};
+    assign LD = {1'b1, ~o_digitalTube};
 endmodule
