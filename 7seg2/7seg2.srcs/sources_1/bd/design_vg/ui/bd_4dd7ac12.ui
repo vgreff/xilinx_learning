@@ -1,0 +1,32 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.25",
+   "Default View_TopLeft":"-320,-313",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 3 -x 760 -y 50 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 3 -x 760 -y 80 -defaultsOSRD
+preplace port port-id_vg_rst -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
+preplace portBus o_ledp -pg 1 -lvl 3 -x 760 -y 320 -defaultsOSRD
+preplace portBus o_digitalTube -pg 1 -lvl 3 -x 760 -y 350 -defaultsOSRD
+preplace portBus i_button -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 210 -y 110 -defaultsOSRD
+preplace inst top_demo_0 -pg 1 -lvl 2 -x 570 -y 340 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 2 -x 570 -y 180 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 20 220 400
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 1 N 160
+preplace netloc vg_rst_1 1 0 2 NJ 330 400J
+preplace netloc top_demo_0_o_led 1 2 1 740J 320n
+preplace netloc top_demo_0_o_digitalTube 1 2 1 NJ 350
+preplace netloc i_button_1 1 0 2 NJ 360 NJ
+preplace netloc processing_system7_0_DDR 1 1 2 400J 50 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 2 NJ 80 NJ
+levelinfo -pg 1 0 210 570 760
+pagesize -pg 1 -db -bbox -sgen -130 0 930 420
+"
+}
+{
+   "da_clkrst_cnt":"1",
+   "da_ps7_cnt":"1"
+}
