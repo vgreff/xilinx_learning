@@ -3,7 +3,7 @@
 // Show synchronous and Asynchronous reset implementations
 // ------------------------------------
 // Author : Frank Bruno
-`timescale 1ns/10ps
+`timescale 1ns/100ps
 module simple_ff_async
   #
   (

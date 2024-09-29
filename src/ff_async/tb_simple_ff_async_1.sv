@@ -21,20 +21,21 @@ module tb_simple_ff_async;
   end
 
   initial begin
-    D = '0;
-    #300;
-    forever D = #400 ~D;
-  end
-
-  initial begin
-    SR = '1;
     CE = '0;
-    // D  = '0;
-    #1000 SR = '0;
-    #1400 CE = '1;
-    #1000 CE = '0;
-    #1000 CE = '1;
-    repeat (100) @(posedge CK);
+    D  = '0;
+    #100 SR = '1;
+    @(posedge CK);
+    SR <= '0;
+    repeat (5) @(posedge CK);
+    D  <= '1;
+    @(posedge CK);
+    D  <= '0;
+    @(posedge CK);
+    CE <= '1;
+    D  <= '1;
+    @(posedge CK);
+    D  <= '0;
+    @(posedge CK);
     $finish;
   end
 endmodule
