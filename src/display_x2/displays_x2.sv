@@ -11,7 +11,7 @@ module displays_x2
   (
    parameter MODE         = "HEX", // or "DEC"
    parameter NUM_SEGMENTS = 4,
-   parameter NUM_DISPLAYS = 1,
+   parameter NUM_DISPLAYS = 2,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
    parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"

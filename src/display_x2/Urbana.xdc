@@ -64,10 +64,10 @@ set_property -dict {PACKAGE_PIN H6 IOSTANDARD LVCMOS25} [get_ports {anode[0][1]}
 set_property -dict {PACKAGE_PIN C3 IOSTANDARD LVCMOS25} [get_ports {anode[0][2]}];  # Active LOW
 set_property -dict {PACKAGE_PIN B3 IOSTANDARD LVCMOS25} [get_ports {anode[0][3]}];  # Active LOW
 # On-board 7-Segment display 1
-set_property -dict {PACKAGE_PIN E4 IOSTANDARD LVCMOS25} [get_ports {anode[0]}];  # 0 Active LOW
-set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS25} [get_ports {anode[1]}];  # 1 Active LOW
-set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS25} [get_ports {anode[2]}];  # 2 Active LOW
-set_property -dict {PACKAGE_PIN H5 IOSTANDARD LVCMOS25} [get_ports {anode[3]}];  # 3 Active LOW
+set_property -dict {PACKAGE_PIN E4 IOSTANDARD LVCMOS25} [get_ports {anode[1][0]}];  # 0 Active LOW
+set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS25} [get_ports {anode[1][1]}];  # 1 Active LOW
+set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS25} [get_ports {anode[1][2]}];  # 2 Active LOW
+set_property -dict {PACKAGE_PIN H5 IOSTANDARD LVCMOS25} [get_ports {anode[1][3]}];  # 3 Active LOW
 
 # On-board 7-Segment display 0
 set_property -dict {PACKAGE_PIN E6 IOSTANDARD LVCMOS25} [get_ports {cathode[0][0]}];  # CA Active LOW
