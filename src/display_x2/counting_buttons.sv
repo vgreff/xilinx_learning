@@ -10,28 +10,23 @@ module counting_buttons
   #
   (
    parameter MODE         = "HEX", // or "DEC"
-   parameter NUM_SEGMENTS = 4,
-   parameter NUM_DISPLAYS = 2,
+   parameter NUM_SEGMENTS = 8,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
    parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
    )
   (
-    input wire                                          clk,
-    input wire                                          BTNC,
-    input wire                                          CPU_RESETN,
-    output logic [NUM_SEGMENTS-1:0][NUM_DISPLAYS-1:0]   anode,
-    output logic [7:0][NUM_DISPLAYS-1:0]                cathode
+   input wire                      clk,
+   input wire                      BTNC,
+   input wire                      CPU_RESETN,
+   output logic [NUM_SEGMENTS-1:0] anode,
+   output logic [7:0]              cathode
    );
 
-  logic [NUM_SEGMENTS-1:0][3:0][NUM_DISPLAYS-1:0]       encoded;
-  logic [NUM_SEGMENTS-1:0][NUM_DISPLAYS-1:0]            digit_point;
+  logic [NUM_SEGMENTS-1:0][3:0]       encoded;
+  logic [NUM_SEGMENTS-1:0]            digit_point;
   (* ASYNC_REG = "TRUE" *) logic [1:0]reset_sync = '1;
   logic                               reset;
-
-generate
-  genvar i;
-  for (i=0; i < NUM_DISPLAYS; i=i+1) begin : dff
 
   seven_segment
     #
@@ -40,17 +35,15 @@ generate
      .CLK_PER      (CLK_PER),   // Clock period in ns
      .REFR_RATE    (REFR_RATE)  // Refresh rate in Hz
      )
-  u_7seg 
+  u_7seg
     (
      .clk          (clk),
      .reset        (reset),
-     .encoded      (encoded[i]),
-     .digit_point  (digit_point[i]),
-     .anode        (anode[i]),
-     .cathode      (cathode[i])
+     .encoded      (encoded),
+     .digit_point  (digit_point),
+     .anode        (anode),
+     .cathode      (cathode)
      );
-  end
-endgenerate
 
   // Capture the rising edge of button press
   logic                               last_button;
