@@ -60,33 +60,33 @@ set_property -dict {PACKAGE_PIN H2 IOSTANDARD LVCMOS25} [get_ports {BTNC}]
 
 # On-board 7-Segment display 0
 set_property -dict {PACKAGE_PIN G6 IOSTANDARD LVCMOS25} [get_ports {anode[0][0]}];  # Active LOW
-set_property -dict {PACKAGE_PIN H6 IOSTANDARD LVCMOS25} [get_ports {anode[1][0]}];  # Active LOW
-set_property -dict {PACKAGE_PIN C3 IOSTANDARD LVCMOS25} [get_ports {anode[2][0]}];  # Active LOW
-set_property -dict {PACKAGE_PIN B3 IOSTANDARD LVCMOS25} [get_ports {anode[3][0]}];  # Active LOW
+set_property -dict {PACKAGE_PIN H6 IOSTANDARD LVCMOS25} [get_ports {anode[0][1]}];  # Active LOW
+set_property -dict {PACKAGE_PIN C3 IOSTANDARD LVCMOS25} [get_ports {anode[0][2]}];  # Active LOW
+set_property -dict {PACKAGE_PIN B3 IOSTANDARD LVCMOS25} [get_ports {anode[0][3]}];  # Active LOW
 # On-board 7-Segment display 1
-set_property -dict {PACKAGE_PIN E4 IOSTANDARD LVCMOS25} [get_ports {anode[0][1]}];  # 0 Active LOW
-set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS25} [get_ports {anode[1][1]}];  # 1 Active LOW
-set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS25} [get_ports {anode[2][1]}];  # 2 Active LOW
-set_property -dict {PACKAGE_PIN H5 IOSTANDARD LVCMOS25} [get_ports {anode[3][1]}];  # 3 Active LOW
+set_property -dict {PACKAGE_PIN E4 IOSTANDARD LVCMOS25} [get_ports {anode[0]}];  # 0 Active LOW
+set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS25} [get_ports {anode[1]}];  # 1 Active LOW
+set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS25} [get_ports {anode[2]}];  # 2 Active LOW
+set_property -dict {PACKAGE_PIN H5 IOSTANDARD LVCMOS25} [get_ports {anode[3]}];  # 3 Active LOW
 
 # On-board 7-Segment display 0
 set_property -dict {PACKAGE_PIN E6 IOSTANDARD LVCMOS25} [get_ports {cathode[0][0]}];  # CA Active LOW
-set_property -dict {PACKAGE_PIN B4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][0]}];  # CB Active LOW
-set_property -dict {PACKAGE_PIN D5 IOSTANDARD LVCMOS25} [get_ports {cathode[2][0]}];  # CC Active LOW
-set_property -dict {PACKAGE_PIN C5 IOSTANDARD LVCMOS25} [get_ports {cathode[3][0]}];  # CD Active LOW
-set_property -dict {PACKAGE_PIN D7 IOSTANDARD LVCMOS25} [get_ports {cathode[4][0]}];  # CE Active LOW
-set_property -dict {PACKAGE_PIN D6 IOSTANDARD LVCMOS25} [get_ports {cathode[5][0]}];  # CF Active LOW
-set_property -dict {PACKAGE_PIN C4 IOSTANDARD LVCMOS25} [get_ports {cathode[6][0]}];  # CG Active LOW
-set_property -dict {PACKAGE_PIN B5 IOSTANDARD LVCMOS25} [get_ports {cathode[7][0]}];  # CDP Active LOW
+set_property -dict {PACKAGE_PIN B4 IOSTANDARD LVCMOS25} [get_ports {cathode[0][1]}];  # CB Active LOW
+set_property -dict {PACKAGE_PIN D5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][2]}];  # CC Active LOW
+set_property -dict {PACKAGE_PIN C5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][3]}];  # CD Active LOW
+set_property -dict {PACKAGE_PIN D7 IOSTANDARD LVCMOS25} [get_ports {cathode[0][4]}];  # CE Active LOW
+set_property -dict {PACKAGE_PIN D6 IOSTANDARD LVCMOS25} [get_ports {cathode[0][5]}];  # CF Active LOW
+set_property -dict {PACKAGE_PIN C4 IOSTANDARD LVCMOS25} [get_ports {cathode[0][6]}];  # CG Active LOW
+set_property -dict {PACKAGE_PIN B5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][7]}];  # CDP Active LOW
 # On-board 7-Segment display 1
-set_property -dict {PACKAGE_PIN F3 IOSTANDARD LVCMOS25} [get_ports {cathode[0][1]}];  # CA Active LOW
+set_property -dict {PACKAGE_PIN F3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][0]}];  # CA Active LOW
 set_property -dict {PACKAGE_PIN G5 IOSTANDARD LVCMOS25} [get_ports {cathode[1][1]}];  # CB Active LOW
-set_property -dict {PACKAGE_PIN J3 IOSTANDARD LVCMOS25} [get_ports {cathode[2][1]}];  # CC Active LOW
-set_property -dict {PACKAGE_PIN H4 IOSTANDARD LVCMOS25} [get_ports {cathode[3][1]}];  # CD Active LOW
-set_property -dict {PACKAGE_PIN F4 IOSTANDARD LVCMOS25} [get_ports {cathode[4][1]}];  # CE Active LOW
-set_property -dict {PACKAGE_PIN H3 IOSTANDARD LVCMOS25} [get_ports {cathode[5][1]}];  # CF Active LOW
-set_property -dict {PACKAGE_PIN E5 IOSTANDARD LVCMOS25} [get_ports {cathode[6][1]}];  # CG Active LOW
-set_property -dict {PACKAGE_PIN J4 IOSTANDARD LVCMOS25} [get_ports {cathode[7][1]}];  # CDP Active LOW
+set_property -dict {PACKAGE_PIN J3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][2]}];  # CC Active LOW
+set_property -dict {PACKAGE_PIN H4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][3]}];  # CD Active LOW
+set_property -dict {PACKAGE_PIN F4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][4]}];  # CE Active LOW
+set_property -dict {PACKAGE_PIN H3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][5]}];  # CF Active LOW
+set_property -dict {PACKAGE_PIN E5 IOSTANDARD LVCMOS25} [get_ports {cathode[1][6]}];  # CG Active LOW
+set_property -dict {PACKAGE_PIN J4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][7]}];  # CDP Active LOW
 
 
 # #HDMI Signals

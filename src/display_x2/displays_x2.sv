@@ -11,7 +11,7 @@ module displays_x2
   (
    parameter MODE         = "HEX", // or "DEC"
    parameter NUM_SEGMENTS = 4,
-   parameter NUM_DISPLAYS = 2,
+   parameter NUM_DISPLAYS = 1,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
    parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
@@ -20,8 +20,8 @@ module displays_x2
     input wire                                          clk,
     input wire                                          BTNC,
     input wire                                          CPU_RESETN,
-    output logic [NUM_SEGMENTS-1:0][NUM_DISPLAYS-1:0]   anode,
-    output logic [7:0][NUM_DISPLAYS-1:0]                cathode
+    output logic [NUM_SEGMENTS-1:0]   anode[NUM_DISPLAYS-1:0] ,
+    output logic [7:0]                cathode[NUM_DISPLAYS-1:0] 
    );
 
 
