@@ -24,6 +24,8 @@ module top_2displays_counters
     input wire                                          CPU_RESETN,
     output logic [NUM_SEGMENTS-1:0]                     anode[NUM_DISPLAYS-1:0],
     output logic [7:0]                                  cathode[NUM_DISPLAYS-1:0], 
+    output logic                                        pmod_anodeSel,
+    output logic [7:0]                                  pmod_cathode,
     output logic [7:0]                                  LED[2]
    );
 
@@ -74,6 +76,7 @@ logic [COUNTER_WITDH-1:0]            digit_pointc[NUM_COUNTERS];
 // G = bit 6
 // dot = bit 7
 logic [NUM_SEGMENTS-1:0][7:0]       segcathode[NUM_COUNTERS];
+logic [NUM_SEGMENTS-1:0][7:0]       pmod_segcathode;
 
 generate
   genvar i;
@@ -137,12 +140,35 @@ assign digit_point[i] = {digit_pointc[2*i], digit_pointc[2*i+1]};
         .segcathode   (segcathode[i])
         );
 
+//---------  seven_segment_pmod -------------------------
+
+
   end
 endgenerate
 
+// assign LED[0] = segcathode[0][0]; // units of DEC counter
+// assign LED[1] = segcathode[0][1]; // tens  of DEC counter
 
-assign LED[0] = segcathode[0][0]; // units of DEC counter
-assign LED[1] = segcathode[0][1]; // tens  of DEC counter
+    seven_segment_pmod
+        #
+        (
+        .CLK_PER      (CLK_PER),   // Clock period in ns
+        .REFR_RATE    (REFR_RATE)  // Refresh rate in Hz
+        )
+      u_7seg_pmod_i
+        (
+        .clk          (clk),
+        .reset        (reset),
+        .encoded      (encodedc[0]),
+        .digit_point  (digit_pointc[0]),
+        .anodeSel     (pmod_anodeSel),
+        .cathode      (pmod_cathode),
+        .segcathode   (pmod_segcathode)
+        );
+
+
+assign LED[0] = pmod_segcathode[0]; // units of DEC counter
+assign LED[1] = pmod_segcathode[1]; // tens  of DEC counter
 
 
 endmodule // top_2displays_counters
