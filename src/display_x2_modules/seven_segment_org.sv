@@ -19,8 +19,7 @@ module seven_segment
    input wire [NUM_SEGMENTS-1:0][3:0] encoded,
    input wire [NUM_SEGMENTS-1:0]      digit_point,
    output logic [0:NUM_SEGMENTS-1]    anode,
-   output logic [7:0]                 cathode,
-   output logic [NUM_SEGMENTS-1:0][7:0]       segcathode
+   output logic [7:0]                 cathode
    );
 
   localparam INTERVAL = int'(100000000 / (CLK_PER * REFR_RATE));
@@ -50,12 +49,10 @@ module seven_segment
     anode                    <= '1;  //set all digit selector high ie 1
     anode[anode_count]       <= '0;  //set current digit selector to 0 ,active low
     cathode                  <= segments[anode_count]; // desired copy value 
-    segcathode[anode_count]  <= ~segments[anode_count]; // desired copy value 
     if (reset) begin
       refresh_count          <= '0;
       anode_count            <= '0;
     end
   end
-
 
 endmodule

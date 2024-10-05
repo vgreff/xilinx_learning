@@ -22,8 +22,9 @@ module top_2displays_counters
     input wire                                          clk,
     input wire                                          BTNC[NUM_BTN],
     input wire                                          CPU_RESETN,
-    output logic [NUM_SEGMENTS-1:0]   anode[NUM_DISPLAYS-1:0] ,
-    output logic [7:0]                cathode[NUM_DISPLAYS-1:0] 
+    output logic [NUM_SEGMENTS-1:0]                     anode[NUM_DISPLAYS-1:0],
+    output logic [7:0]                                  cathode[NUM_DISPLAYS-1:0], 
+    output logic [7:0]                                  LED[2]
    );
 
 logic                               reset;
@@ -67,6 +68,12 @@ localparam NUM_COUNTERS = COUNTERS_PER_SEGMMENT * 2;
 
 logic [COUNTER_WITDH-1:0][3:0]       encodedc[NUM_COUNTERS];
 logic [COUNTER_WITDH-1:0]            digit_pointc[NUM_COUNTERS];
+
+// segcathode are the value of that cathode for each digit with 1 active
+// A = bit 0
+// G = bit 6
+// dot = bit 7
+logic [NUM_SEGMENTS-1:0][7:0]       segcathode[NUM_COUNTERS];
 
 generate
   genvar i;
@@ -126,12 +133,16 @@ assign digit_point[i] = {digit_pointc[2*i], digit_pointc[2*i+1]};
         .encoded      (encoded[i]),
         .digit_point  (digit_point[i]),
         .anode        (anode[i]),
-        .cathode      (cathode[i])
+        .cathode      (cathode[i]),
+        .segcathode   (segcathode[i])
         );
 
   end
 endgenerate
 
+
+assign LED[0] = segcathode[0][0]; // units of DEC counter
+assign LED[1] = segcathode[0][1]; // tens  of DEC counter
 
 
 endmodule // top_2displays_counters
