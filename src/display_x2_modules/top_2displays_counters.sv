@@ -14,6 +14,7 @@ module top_2displays_counters
    parameter NUM_SEGMENTS = 4,
    parameter NUM_DISPLAYS = 2,
    parameter NUM_BTN = 2,
+   parameter NUM_LED_SET = 3,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
    parameter ASYNC_BUTTON = "DEBOUNCE" // "SAFE"  // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
@@ -26,7 +27,7 @@ module top_2displays_counters
     output logic [7:0]                                  cathode[NUM_DISPLAYS-1:0], 
     output logic                                        pmod_anodeSel,
     output logic [6:0]                                  pmod_cathode,
-    output logic [7:0]                                  LED[2]
+    output logic [7:0]                                  LED[NUM_LED_SET]
    );
 
 logic                               reset;
@@ -169,6 +170,9 @@ endgenerate
 
 assign LED[0] = pmod_segcathode[0]; // units of DEC counter
 assign LED[1] = pmod_segcathode[1]; // tens  of DEC counter
+// pmod led are active low
+assign LED[2] = ~segcathode[0][0]; // units of DEC counter
+// assign LED[2] = ~segcathode[0][1]; // tens  of DEC counter
 
 
 endmodule // top_2displays_counters
