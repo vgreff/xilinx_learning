@@ -12,6 +12,7 @@ module top_2displays_counters
    parameter MODE         = "HEX", // or "DEC"
    parameter NUM_SEGMENTS = 4,
    parameter NUM_DISPLAYS = 2,
+   parameter NUM_COUNTERS = 2,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
    parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
@@ -52,32 +53,33 @@ button_debouncer
     .button_down(button_down)
    );
 
+//---------  counter outputs -------------------------
 
-//---------  counter0 -------------------------
-
-logic [NUM_SEGMENTS-1:0][3:0]       encoded;
-logic [NUM_SEGMENTS-1:0]            digit_point;
-
-counter
-  #
-  (
-    .MODE(MODE),
-    .NUM_SEGMENTS(NUM_SEGMENTS)
-   )
-   counter0
-  (
-    .clk(clk),
-    .reset(reset),
-    .button_down(button_down),
-    .encoded(encoded),
-    .digit_point(digit_point)
-   );
-
-//---------  seven_segment -------------------------
+logic [NUM_SEGMENTS-1:0][3:0]       encoded[NUM_COUNTERS];
+logic [NUM_SEGMENTS-1:0]            digit_point[NUM_COUNTERS];
 
 generate
   genvar i;
   for (i=0; i < NUM_DISPLAYS; i=i+1) begin : dff
+
+//---------  counter0 -------------------------
+
+counter
+  #
+  (
+    .MODE((i % 2 == 0)? "HEX" : "DEC"),
+    .NUM_SEGMENTS(NUM_SEGMENTS)
+   )
+   counter
+  (
+    .clk(clk),
+    .reset(reset),
+    .button_down(button_down),
+    .encoded(encoded[i]),
+    .digit_point(digit_point[i])
+   );
+
+//---------  seven_segment -------------------------
 
     seven_segment
         #
@@ -90,8 +92,8 @@ generate
         (
         .clk          (clk),
         .reset        (reset),
-        .encoded      (encoded),
-        .digit_point  (digit_point),
+        .encoded      (encoded[i]),
+        .digit_point  (digit_point[i]),
         .anode        (anode[i]),
         .cathode      (cathode[i])
         );

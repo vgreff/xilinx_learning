@@ -18,7 +18,7 @@ module seven_segment
    input wire                         reset, // active high reset
    input wire [NUM_SEGMENTS-1:0][3:0] encoded,
    input wire [NUM_SEGMENTS-1:0]      digit_point,
-   output logic [NUM_SEGMENTS-1:0]    anode,
+   output logic [0:NUM_SEGMENTS-1]    anode,
    output logic [7:0]                 cathode
    );
 

@@ -424,10 +424,6 @@ set_property -dict {PACKAGE_PIN J4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][7
 # set_property PACKAGE_PIN C1 [get_ports sys_clk_p]
 # set_property PACKAGE_PIN B1 [get_ports sys_clk_n]
 
-# PadFunction: IO_L21N_T3_DQS_35 (SCHEMATIC SW0)
-set_property IOSTANDARD LVCMOS25 [get_ports sys_rst]
-set_property PACKAGE_PIN G1 [get_ports sys_rst]
-
 # # PadFunction: IO_L3P_T0_DQS_34 (SCHEMATIC DDR_LDQS_P)
 # set_property SLEW FAST [get_ports {ddr3_dqs_p[0]}]
 # set_property IN_TERM UNTUNED_SPLIT_50 [get_ports {ddr3_dqs_p[0]}]
@@ -465,7 +461,12 @@ set_property PACKAGE_PIN G1 [get_ports sys_rst]
 # set_property INTERNAL_VREF 0.675 [get_iobanks 34]
 # set_property CFGBS VCCO
 
-set_property BITSTREAM.CONFIG.UNUSEDPIN PULLUP [current_design]
+# PadFunction: IO_L21N_T3_DQS_35 (SCHEMATIC SW0)
+# set_property IOSTANDARD LVCMOS25 [get_ports sys_rst]
+# set_property PACKAGE_PIN G1 [get_ports sys_rst]
+
+# set_property BITSTREAM.CONFIG.UNUSEDPIN PULLUP [current_design]
+set_property BITSTREAM.CONFIG.UNUSEDPIN PULLDOWN [current_design]
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
 
 
