@@ -149,6 +149,21 @@ endgenerate
 
 // assign LED[0] = segcathode[0][0]; // units of DEC counter
 // assign LED[1] = segcathode[0][1]; // tens  of DEC counter
+// assign LED[0] = segcathode[0][2]; // units of HEX counter
+// assign LED[1] = segcathode[0][3]; // tens  of HEX counter
+
+// // for 4 led set config  LED[0] LED[1] on board
+// // on board led are active high
+// assign LED[0] = segcathode[0][2]; // units of HEX counter
+// assign LED[1] = segcathode[0][3]; // tens  of HEX counter
+
+// // for 4 led set config  LED[3] in PMOD_A   LED[2] in PMOD_B
+// // pmod led are active low
+// assign LED[2] = ~segcathode[0][2]; // units of HEX counter
+// assign LED[3] = ~segcathode[0][3]; // tens  of HEX counter
+
+
+// seven_segment_pmod in PMOD B
 
     seven_segment_pmod
         #
@@ -168,11 +183,19 @@ endgenerate
         );
 
 
-assign LED[0] = pmod_segcathode[0]; // units of DEC counter
-assign LED[1] = pmod_segcathode[1]; // tens  of DEC counter
+// assign LED[0] = pmod_segcathode[0]; // units of DEC counter
+// assign LED[1] = pmod_segcathode[1]; // tens  of DEC counter
+assign LED[0] = pmod_segcathode[2]; // units of HEX counter
+assign LED[1] = pmod_segcathode[3]; // tens  of HEX counter
+
+// for 3 led set config    7SEG in PMOD_B   LED[2] in PMOD_A
 // pmod led are active low
-assign LED[2] = ~segcathode[0][0]; // units of DEC counter
-// assign LED[2] = ~segcathode[0][1]; // tens  of DEC counter
+// assign LED[3] = ~segcathode[0][0]; // units of HEX counter
+
+// for 4 led set config  LED[3] in PMOD_A   LED[2] in PMOD_B
+// pmod led are active low
+// assign LED[3] = ~segcathode[0][0]; // units of HEX counter
+// assign LED[2] = ~segcathode[0][1]; // tens  of HEX counter
 
 
 endmodule // top_2displays_counters
