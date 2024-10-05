@@ -13,13 +13,14 @@ module top_2displays_counters
    parameter COUNTER_WITDH = 2,
    parameter NUM_SEGMENTS = 4,
    parameter NUM_DISPLAYS = 2,
+   parameter NUM_BTN = 2,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
    parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
    )
   (
     input wire                                          clk,
-    input wire                                          BTNC,
+    input wire                                          BTNC[NUM_BTN],
     input wire                                          CPU_RESETN,
     output logic [NUM_SEGMENTS-1:0]   anode[NUM_DISPLAYS-1:0] ,
     output logic [7:0]                cathode[NUM_DISPLAYS-1:0] 
@@ -38,20 +39,27 @@ logic                               reset;
    );
 
 //---------  button_debouncer -------------------------
-logic                               button_down;
+logic                               button_down[NUM_BTN];
 
-button_debouncer
-  #
-  (
-    .ASYNC_BUTTON(ASYNC_BUTTON)
-   )
-  btnClean
-  (
-    .clk(clk),
-    .reset(reset),
-    .BTNC(BTNC),
-    .button_down(button_down)
-   );
+generate
+  genvar j;
+  for (j=0; j < NUM_BTN; j=j+1) begin : counters
+
+    button_debouncer
+      #
+      (
+        .ASYNC_BUTTON(ASYNC_BUTTON)
+      )
+      btnClean_i
+      (
+        .clk(clk),
+        .reset(reset),
+        .BTNC(BTNC[j]),
+        .button_down(button_down[j])
+      );
+
+  end
+endgenerate
 
 //---------  counter outputs -------------------------
 parameter COUNTERS_PER_SEGMMENT = (NUM_SEGMENTS / COUNTER_WITDH);
@@ -62,7 +70,7 @@ logic [COUNTER_WITDH-1:0]            digit_pointc[NUM_COUNTERS];
 
 generate
   genvar i;
-  for (i=0; i < NUM_DISPLAYS; i=i+1) begin : dff
+  for (i=0; i < NUM_DISPLAYS; i=i+1) begin : connects
 
 //---------  counter -------------------------
 
@@ -76,7 +84,7 @@ counter
   (
     .clk(clk),
     .reset(reset),
-    .button_down(button_down),
+    .button_down(button_down[i]),
     .encoded(encodedc[2*i]),
     .digit_point(digit_pointc[2*i])
    );
@@ -91,7 +99,7 @@ counter
   (
     .clk(clk),
     .reset(reset),
-    .button_down(button_down),
+    .button_down(button_down[i]),
     .encoded(encodedc[2*i+1]),
     .digit_point(digit_pointc[2*i+1])
    );

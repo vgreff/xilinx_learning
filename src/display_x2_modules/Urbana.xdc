@@ -47,8 +47,8 @@ set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS25} [get_ports {CPU_RESETN}]
 # # On-board Buttons
 # set_property -dict {PACKAGE_PIN J2 IOSTANDARD LVCMOS25} [get_ports {BTN[0]}]
 # set_property -dict {PACKAGE_PIN J1 IOSTANDARD LVCMOS25} [get_ports {BTN[1]}]
-# set_property -dict {PACKAGE_PIN G2 IOSTANDARD LVCMOS25} [get_ports {BTN[2]}]
-set_property -dict {PACKAGE_PIN H2 IOSTANDARD LVCMOS25} [get_ports {BTNC}]
+set_property -dict {PACKAGE_PIN G2 IOSTANDARD LVCMOS25} [get_ports {BTNC[1]}]
+set_property -dict {PACKAGE_PIN H2 IOSTANDARD LVCMOS25} [get_ports {BTNC[0]}]
 
 # On-board color LEDs
 # set_property -dict {PACKAGE_PIN C9 IOSTANDARD LVCMOS33} [get_ports {RGB0[0]}];   # RBG0_R
