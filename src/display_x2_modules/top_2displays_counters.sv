@@ -16,7 +16,7 @@ module top_2displays_counters
    parameter NUM_BTN = 2,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
-   parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
+   parameter ASYNC_BUTTON = "DEBOUNCE" // "SAFE"  // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
    )
   (
     input wire                                          clk,
@@ -62,8 +62,8 @@ generate
 endgenerate
 
 //---------  counter outputs -------------------------
-parameter COUNTERS_PER_SEGMMENT = (NUM_SEGMENTS / COUNTER_WITDH);
-parameter NUM_COUNTERS = COUNTERS_PER_SEGMMENT * 2;
+localparam COUNTERS_PER_SEGMMENT = (NUM_SEGMENTS / COUNTER_WITDH);
+localparam NUM_COUNTERS = COUNTERS_PER_SEGMMENT * 2;
 
 logic [COUNTER_WITDH-1:0][3:0]       encodedc[NUM_COUNTERS];
 logic [COUNTER_WITDH-1:0]            digit_pointc[NUM_COUNTERS];

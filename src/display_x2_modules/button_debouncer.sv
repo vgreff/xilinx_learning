@@ -10,7 +10,7 @@
 module button_debouncer
   #
   (
-   parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
+   parameter ASYNC_BUTTON = "DEBOUNCE" // "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
    )
   (
     input wire                                 clk,
