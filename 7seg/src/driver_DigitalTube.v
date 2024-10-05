@@ -10,7 +10,7 @@ module driver_DigitalTube #(
     output          o_sel
 );
 /***************parameter*************/
-localparam          P_0 = 7'b0000001    ;
+localparam          P_0 = 7'b0000001    ; //ABCDEFG
 localparam          P_1 = 7'b1111001    ;
 localparam          P_2 = 7'b0010010    ;
 localparam          P_3 = 7'b0110000    ;
