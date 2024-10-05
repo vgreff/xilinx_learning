@@ -10,9 +10,9 @@ module top_2displays_counters
   #
   (
    parameter MODE         = "HEX", // or "DEC"
+   parameter COUNTER_WITDH = 2,
    parameter NUM_SEGMENTS = 4,
    parameter NUM_DISPLAYS = 2,
-   parameter NUM_COUNTERS = 2,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
    parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
@@ -54,30 +54,53 @@ button_debouncer
    );
 
 //---------  counter outputs -------------------------
+parameter COUNTERS_PER_SEGMMENT = (NUM_SEGMENTS / COUNTER_WITDH);
+parameter NUM_COUNTERS = COUNTERS_PER_SEGMMENT * 2;
 
-logic [NUM_SEGMENTS-1:0][3:0]       encoded[NUM_COUNTERS];
-logic [NUM_SEGMENTS-1:0]            digit_point[NUM_COUNTERS];
+logic [COUNTER_WITDH-1:0][3:0]       encodedc[NUM_COUNTERS];
+logic [COUNTER_WITDH-1:0]            digit_pointc[NUM_COUNTERS];
 
 generate
   genvar i;
   for (i=0; i < NUM_DISPLAYS; i=i+1) begin : dff
 
-//---------  counter0 -------------------------
+//---------  counter -------------------------
 
 counter
   #
   (
-    .MODE((i % 2 == 0)? "HEX" : "DEC"),
-    .NUM_SEGMENTS(NUM_SEGMENTS)
+    .MODE((1)? "HEX" : "DEC"),
+    .NUM_SEGMENTS(COUNTERS_PER_SEGMMENT)
    )
-   counter
+   counter_hex_i
   (
     .clk(clk),
     .reset(reset),
     .button_down(button_down),
-    .encoded(encoded[i]),
-    .digit_point(digit_point[i])
+    .encoded(encodedc[2*i]),
+    .digit_point(digit_pointc[2*i])
    );
+
+counter
+  #
+  (
+    .MODE((0)? "HEX" : "DEC"),
+    .NUM_SEGMENTS(COUNTERS_PER_SEGMMENT)
+   )
+   counter_dec_i
+  (
+    .clk(clk),
+    .reset(reset),
+    .button_down(button_down),
+    .encoded(encodedc[2*i+1]),
+    .digit_point(digit_pointc[2*i+1])
+   );
+
+logic [NUM_SEGMENTS-1:0][3:0]       encoded[NUM_DISPLAYS];
+logic [NUM_SEGMENTS-1:0]            digit_point[NUM_DISPLAYS];
+
+assign encoded[i] = {encodedc[2*i], encodedc[2*i+1]};
+assign digit_point[i] = {digit_pointc[2*i], digit_pointc[2*i+1]};
 
 //---------  seven_segment -------------------------
 
@@ -88,7 +111,7 @@ counter
         .CLK_PER      (CLK_PER),   // Clock period in ns
         .REFR_RATE    (REFR_RATE)  // Refresh rate in Hz
         )
-      u_7seg
+      u_7seg_i
         (
         .clk          (clk),
         .reset        (reset),
