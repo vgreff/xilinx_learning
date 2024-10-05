@@ -89,6 +89,38 @@ set_property -dict {PACKAGE_PIN E5 IOSTANDARD LVCMOS25} [get_ports {cathode[1][6
 set_property -dict {PACKAGE_PIN J4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][7]}];  # CDP Active LOW
 
 
+
+# PMOD A Signals
+# set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports {JA1_P}];     # JA1_P
+# set_property -dict {PACKAGE_PIN F15 IOSTANDARD LVCMOS33} [get_ports {JA1_N}];     # JA1_N
+# set_property -dict {PACKAGE_PIN H13 IOSTANDARD LVCMOS33} [get_ports {JA2_P}];     # JA2_P
+# set_property -dict {PACKAGE_PIN H14 IOSTANDARD LVCMOS33} [get_ports {JA2_N}];     # JA2_N
+# set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33} [get_ports {JA3_P}];     # JA3_P
+# set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33} [get_ports {JA3_N}];     # JA3_N
+# set_property -dict {PACKAGE_PIN E14 IOSTANDARD LVCMOS33} [get_ports {JA4_P}];     # JA4_P
+# set_property -dict {PACKAGE_PIN E15 IOSTANDARD LVCMOS33} [get_ports {JA4_N}];     # JA4_N
+
+# PMOD B Signals
+# LCD DISPLAY 2x
+# pmod_cathode = {G,F,E,D,C,B,A} 
+set_property -dict {PACKAGE_PIN H18 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[5]}];       # F   PIN 1   JB1_P
+set_property -dict {PACKAGE_PIN G18 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[4]}];       # E   PIN 2   JB1_N
+set_property -dict {PACKAGE_PIN K14 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[1]}];       # B   PIN 3   JB2_P
+set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[2]}];       # C   PIN 4   JB2_N
+set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[6]}];       # G   PIN 7   JB3_P
+set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[3]}];       # D   PIN 8   JB3_N
+set_property -dict {PACKAGE_PIN K16 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[0]}];       # A   PIN 9   JB4_P
+set_property -dict {PACKAGE_PIN J16 IOSTANDARD LVCMOS33} [get_ports {pmod_anodeSel}];         # S   PIN 10  JB4_N
+
+# PMOD AB Signals
+# set_property -dict {PACKAGE_PIN D11 IOSTANDARD LVCMOS33} [get_ports {JAB_0}]
+# set_property -dict {PACKAGE_PIN C12 IOSTANDARD LVCMOS33} [get_ports {JAB_1}]
+# set_property -dict {PACKAGE_PIN E16 IOSTANDARD LVCMOS33} [get_ports {JAB_2}]
+# set_property -dict {PACKAGE_PIN G16 IOSTANDARD LVCMOS33} [get_ports {JAB_3}]
+# set_property -dict {PACKAGE_PIN C11 IOSTANDARD LVCMOS33} [get_ports {JAB_4}]
+# set_property -dict {PACKAGE_PIN D10 IOSTANDARD LVCMOS33} [get_ports {JAB_5}]
+
+
 # #HDMI Signals
 # set_property -dict {PACKAGE_PIN U17 IOSTANDARD TDMS_33} [get_ports {HDMI_DO_P}]
 # set_property -dict {PACKAGE_PIN U18 IOSTANDARD TDMS_33} [get_ports {HDMI_D0_N}]
@@ -156,34 +188,6 @@ set_property -dict {PACKAGE_PIN J4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][7
 # set_property -dict {PACKAGE_PIN L17 IOSTANDARD LVCMOS33} [get_ports {SERVO1}]
 # set_property -dict {PACKAGE_PIN N14 IOSTANDARD LVCMOS33} [get_ports {SERVO2}]
 # set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {SERVO3}]
-
-# # PMOD A Signals
-# set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports {JA1_P}]
-# set_property -dict {PACKAGE_PIN F15 IOSTANDARD LVCMOS33} [get_ports {JA1_N}]
-# set_property -dict {PACKAGE_PIN H13 IOSTANDARD LVCMOS33} [get_ports {JA2_P}]
-# set_property -dict {PACKAGE_PIN H14 IOSTANDARD LVCMOS33} [get_ports {JA2_N}]
-# set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33} [get_ports {JA3_P}]
-# set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33} [get_ports {JA3_N}]
-# set_property -dict {PACKAGE_PIN E14 IOSTANDARD LVCMOS33} [get_ports {JA4_P}]
-# set_property -dict {PACKAGE_PIN E15 IOSTANDARD LVCMOS33} [get_ports {JA4_N}]
-
-# # PMOD B Signals
-# set_property -dict {PACKAGE_PIN H18 IOSTANDARD LVCMOS33} [get_ports {JB1_P}]
-# set_property -dict {PACKAGE_PIN G18 IOSTANDARD LVCMOS33} [get_ports {JB1_N}]
-# set_property -dict {PACKAGE_PIN H13 IOSTANDARD LVCMOS33} [get_ports {JB2_P}]
-# set_property -dict {PACKAGE_PIN H14 IOSTANDARD LVCMOS33} [get_ports {JB2_N}]
-# set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports {JB3_P}]
-# set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports {JB3_N}]
-# set_property -dict {PACKAGE_PIN K16 IOSTANDARD LVCMOS33} [get_ports {JB4_P}]
-# set_property -dict {PACKAGE_PIN J16 IOSTANDARD LVCMOS33} [get_ports {JB4_N}]
-
-# # PMOD AB Signals
-# set_property -dict {PACKAGE_PIN D11 IOSTANDARD LVCMOS33} [get_ports {JAB_0}]
-# set_property -dict {PACKAGE_PIN C12 IOSTANDARD LVCMOS33} [get_ports {JAB_1}]
-# set_property -dict {PACKAGE_PIN E16 IOSTANDARD LVCMOS33} [get_ports {JAB_2}]
-# set_property -dict {PACKAGE_PIN G16 IOSTANDARD LVCMOS33} [get_ports {JAB_3}]
-# set_property -dict {PACKAGE_PIN C11 IOSTANDARD LVCMOS33} [get_ports {JAB_4}]
-# set_property -dict {PACKAGE_PIN D10 IOSTANDARD LVCMOS33} [get_ports {JAB_5}]
 
 # # DDR3 signals
 # set_property IO_BUFFER_TYPE NONE [get_ports {ddr3_ck_n[0]}]

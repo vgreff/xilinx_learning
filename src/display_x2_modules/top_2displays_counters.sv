@@ -25,7 +25,7 @@ module top_2displays_counters
     output logic [NUM_SEGMENTS-1:0]                     anode[NUM_DISPLAYS-1:0],
     output logic [7:0]                                  cathode[NUM_DISPLAYS-1:0], 
     output logic                                        pmod_anodeSel,
-    output logic [7:0]                                  pmod_cathode,
+    output logic [6:0]                                  pmod_cathode,
     output logic [7:0]                                  LED[2]
    );
 

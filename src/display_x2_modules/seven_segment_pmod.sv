@@ -19,7 +19,7 @@ module seven_segment_pmod
    input wire [NUM_SEGMENTS-1:0][3:0]         encoded,
    input wire [NUM_SEGMENTS-1:0]              digit_point,
    output logic                               anodeSel,
-   output logic [7:0]                         cathode,
+   output logic [6:0]                         cathode,
    output logic [NUM_SEGMENTS-1:0][7:0]       segcathode
    );
 
@@ -28,7 +28,7 @@ module seven_segment_pmod
   logic [$clog2(INTERVAL)-1:0]        refresh_count;
   logic [$clog2(NUM_SEGMENTS)-1:0]    anode_count;
   logic [NUM_SEGMENTS-1:0][7:0]       segments;
-  logic [0:NUM_SEGMENTS-1]            anode;
+  // logic [0:NUM_SEGMENTS-1]            anode;
 
   cathode_top ct[NUM_SEGMENTS]
     (
@@ -48,11 +48,11 @@ module seven_segment_pmod
       refresh_count          <= '0;
       anode_count            <= anode_count + 1'b1;
     end else refresh_count <= refresh_count + 1'b1;
-    anode                    <= '1;  //set all digit selector high ie 1
-    anode[anode_count]       <= '0;  //set current digit selector to 0 ,active low
-    cathode                  <= segments[anode_count]; // desired copy value 
+    // anode                    <= '1;  //set all digit selector high ie 1
+    // anode[anode_count]       <= '0;  //set current digit selector to 0 ,active low
+    cathode                  <= segments[anode_count][6:0]; // desired copy value 
     segcathode[anode_count]  <= ~segments[anode_count]; // desired copy value 
-    anodeSel                 <= anode_count;
+    anodeSel                 <= (anode_count == 0);
     if (reset) begin
       refresh_count          <= '0;
       anode_count            <= '0;
