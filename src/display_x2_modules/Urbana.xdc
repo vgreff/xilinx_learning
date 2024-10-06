@@ -90,28 +90,54 @@ set_property -dict {PACKAGE_PIN J4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][7
 
 
 
+# config 2: 4 led sets
 # PMOD A Signals
 # pmod led module
-set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports {LED[2][7]}];     # 0   LED8 L7   PMOD_PIN 1    JA1_P
-set_property -dict {PACKAGE_PIN F15 IOSTANDARD LVCMOS33} [get_ports {LED[2][5]}];     # 1   LED6 L5   PMOD_PIN 2    JA1_N
-set_property -dict {PACKAGE_PIN H13 IOSTANDARD LVCMOS33} [get_ports {LED[2][3]}];     # 2   LED4 L3   PMOD_PIN 3    JA2_P
-set_property -dict {PACKAGE_PIN H14 IOSTANDARD LVCMOS33} [get_ports {LED[2][1]}];     # 3   LED2 L1   PMOD_PIN 4    JA2_N
-set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33} [get_ports {LED[2][6]}];     # 4   LED7 L6   PMOD_PIN 7    JA3_P
-set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33} [get_ports {LED[2][4]}];     # 5   LED5 L4   PMOD_PIN 8    JA3_N
-set_property -dict {PACKAGE_PIN E14 IOSTANDARD LVCMOS33} [get_ports {LED[2][2]}];     # 6   LED3 L2   PMOD_PIN 9    JA4_P
-set_property -dict {PACKAGE_PIN E15 IOSTANDARD LVCMOS33} [get_ports {LED[2][0]}];     # 7   LED1 L0   PMOD_PIN 10   JA4_N
+set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports {LED[3][7]}];     # 0   LED8 L7   PMOD_PIN 1    JA1_P
+set_property -dict {PACKAGE_PIN F15 IOSTANDARD LVCMOS33} [get_ports {LED[3][5]}];     # 1   LED6 L5   PMOD_PIN 2    JA1_N
+set_property -dict {PACKAGE_PIN H13 IOSTANDARD LVCMOS33} [get_ports {LED[3][3]}];     # 2   LED4 L3   PMOD_PIN 3    JA2_P
+set_property -dict {PACKAGE_PIN H14 IOSTANDARD LVCMOS33} [get_ports {LED[3][1]}];     # 3   LED2 L1   PMOD_PIN 4    JA2_N
+set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33} [get_ports {LED[3][6]}];     # 4   LED7 L6   PMOD_PIN 7    JA3_P
+set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33} [get_ports {LED[3][4]}];     # 5   LED5 L4   PMOD_PIN 8    JA3_N
+set_property -dict {PACKAGE_PIN E14 IOSTANDARD LVCMOS33} [get_ports {LED[3][2]}];     # 6   LED3 L2   PMOD_PIN 9    JA4_P
+set_property -dict {PACKAGE_PIN E15 IOSTANDARD LVCMOS33} [get_ports {LED[3][0]}];     # 7   LED1 L0   PMOD_PIN 10   JA4_N
 
 # PMOD B Signals
 # LCD DISPLAY 2x
 # pmod_cathode = {G,F,E,D,C,B,A} 
-set_property -dict {PACKAGE_PIN H18 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[5]}];       # F  b5 PMOD_PIN 1   JB1_P
-set_property -dict {PACKAGE_PIN G18 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[4]}];       # E  b4 PMOD_PIN 2   JB1_N
-set_property -dict {PACKAGE_PIN K14 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[1]}];       # B  b1 PMOD_PIN 3   JB2_P
-set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[2]}];       # C  b2 PMOD_PIN 4   JB2_N
-set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[6]}];       # G  b6 PMOD_PIN 7   JB3_P
-set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[3]}];       # D  b3 PMOD_PIN 8   JB3_N
-set_property -dict {PACKAGE_PIN K16 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[0]}];       # A  b0 PMOD_PIN 9   JB4_P
-set_property -dict {PACKAGE_PIN J16 IOSTANDARD LVCMOS33} [get_ports {pmod_anodeSel}];         # S     PMOD_PIN 10  JB4_N
+set_property -dict {PACKAGE_PIN H18 IOSTANDARD LVCMOS33} [get_ports {LED[2][7]}];       # 0   LED8 L7   JB1_P
+set_property -dict {PACKAGE_PIN G18 IOSTANDARD LVCMOS33} [get_ports {LED[2][5]}];       # 1   LED6 L5   JB1_N
+set_property -dict {PACKAGE_PIN K14 IOSTANDARD LVCMOS33} [get_ports {LED[2][3]}];       # 2   LED4 L3   JB2_P
+set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports {LED[2][1]}];       # 3   LED2 L1   JB2_N
+set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports {LED[2][6]}];       # 4   LED7 L6   JB3_P
+set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports {LED[2][4]}];       # 5   LED5 L4   JB3_N
+set_property -dict {PACKAGE_PIN K16 IOSTANDARD LVCMOS33} [get_ports {LED[2][2]}];       # 6   LED3 L2   JB4_P
+set_property -dict {PACKAGE_PIN J16 IOSTANDARD LVCMOS33} [get_ports {LED[2][0]}];       # 7   LED1 L0   JB4_N
+
+
+# config 1: LCD and 3 led sets
+# # PMOD A Signals
+# # pmod led module
+# set_property -dict {PACKAGE_PIN F14 IOSTANDARD LVCMOS33} [get_ports {LED[2][7]}];     # 0   LED8 L7   PMOD_PIN 1    JA1_P
+# set_property -dict {PACKAGE_PIN F15 IOSTANDARD LVCMOS33} [get_ports {LED[2][5]}];     # 1   LED6 L5   PMOD_PIN 2    JA1_N
+# set_property -dict {PACKAGE_PIN H13 IOSTANDARD LVCMOS33} [get_ports {LED[2][3]}];     # 2   LED4 L3   PMOD_PIN 3    JA2_P
+# set_property -dict {PACKAGE_PIN H14 IOSTANDARD LVCMOS33} [get_ports {LED[2][1]}];     # 3   LED2 L1   PMOD_PIN 4    JA2_N
+# set_property -dict {PACKAGE_PIN J13 IOSTANDARD LVCMOS33} [get_ports {LED[2][6]}];     # 4   LED7 L6   PMOD_PIN 7    JA3_P
+# set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS33} [get_ports {LED[2][4]}];     # 5   LED5 L4   PMOD_PIN 8    JA3_N
+# set_property -dict {PACKAGE_PIN E14 IOSTANDARD LVCMOS33} [get_ports {LED[2][2]}];     # 6   LED3 L2   PMOD_PIN 9    JA4_P
+# set_property -dict {PACKAGE_PIN E15 IOSTANDARD LVCMOS33} [get_ports {LED[2][0]}];     # 7   LED1 L0   PMOD_PIN 10   JA4_N
+
+# # PMOD B Signals
+# # LCD DISPLAY 2x
+# # pmod_cathode = {G,F,E,D,C,B,A} 
+# set_property -dict {PACKAGE_PIN H18 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[5]}];       # F  b5 PMOD_PIN 1   JB1_P
+# set_property -dict {PACKAGE_PIN G18 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[4]}];       # E  b4 PMOD_PIN 2   JB1_N
+# set_property -dict {PACKAGE_PIN K14 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[1]}];       # B  b1 PMOD_PIN 3   JB2_P
+# set_property -dict {PACKAGE_PIN J15 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[2]}];       # C  b2 PMOD_PIN 4   JB2_N
+# set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[6]}];       # G  b6 PMOD_PIN 7   JB3_P
+# set_property -dict {PACKAGE_PIN H17 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[3]}];       # D  b3 PMOD_PIN 8   JB3_N
+# set_property -dict {PACKAGE_PIN K16 IOSTANDARD LVCMOS33} [get_ports {pmod_cathode[0]}];       # A  b0 PMOD_PIN 9   JB4_P
+# set_property -dict {PACKAGE_PIN J16 IOSTANDARD LVCMOS33} [get_ports {pmod_anodeSel}];         # S     PMOD_PIN 10  JB4_N
 
 # PMOD AB Signals
 # set_property -dict {PACKAGE_PIN D11 IOSTANDARD LVCMOS33} [get_ports {JAB_0}]

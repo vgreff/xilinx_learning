@@ -14,7 +14,7 @@ module top_2displays_counters
    parameter NUM_SEGMENTS = 4,
    parameter NUM_DISPLAYS = 2,
    parameter NUM_BTN = 2,
-   parameter NUM_LED_SET = 3,
+   parameter NUM_LED_SET = 4,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
    parameter ASYNC_BUTTON = "DEBOUNCE" // "SAFE"  // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
@@ -25,10 +25,13 @@ module top_2displays_counters
     input wire                                          CPU_RESETN,
     output logic [NUM_SEGMENTS-1:0]                     anode[NUM_DISPLAYS-1:0],
     output logic [7:0]                                  cathode[NUM_DISPLAYS-1:0], 
-    output logic                                        pmod_anodeSel,
-    output logic [6:0]                                  pmod_cathode,
+    // output logic                                        pmod_anodeSel,
+    // output logic [6:0]                                  pmod_cathode,
     output logic [7:0]                                  LED[NUM_LED_SET]
    );
+
+    logic                                        pmod_anodeSel;
+    logic [6:0]                                  pmod_cathode;
 
 logic                               reset;
 
@@ -149,8 +152,8 @@ endgenerate
 
 // assign LED[0] = segcathode[0][0]; // units of DEC counter
 // assign LED[1] = segcathode[0][1]; // tens  of DEC counter
-assign LED[0] = segcathode[0][2]; // units of HEX counter
-assign LED[1] = segcathode[0][3]; // tens  of HEX counter
+// assign LED[0] = segcathode[0][2]; // units of HEX counter
+// assign LED[1] = segcathode[0][3]; // tens  of HEX counter
 
 // // for 4 led set config  LED[0] LED[1] on board
 // // on board led are active high
@@ -182,18 +185,20 @@ assign LED[1] = segcathode[0][3]; // tens  of HEX counter
         .segcathode   (pmod_segcathode)
         );
 
+assign LED[0] = segcathode[0][2]; // units of HEX counter
+assign LED[1] = segcathode[0][3]; // tens  of HEX counter
 
-// assign LED[0] = pmod_segcathode[0]; // units of HEX counter
-// assign LED[1] = pmod_segcathode[1]; // tens  of HEX counter
+// //config 1: LCD and 3 led sets
+// // for 3 led set config    7SEG in PMOD_B   LED[2] in PMOD_A
+// // pmod led are active low
+// assign LED[2] = ~pmod_segcathode[0]; // units of HEX counter
 
-// for 3 led set config    7SEG in PMOD_B   LED[2] in PMOD_A
-// pmod led are active low
-assign LED[2] = ~pmod_segcathode[0]; // units of HEX counter
 
+//config 2: 4 led sets
 // for 4 led set config  LED[3] in PMOD_A   LED[2] in PMOD_B
 // pmod led are active low
-// assign LED[3] = ~segcathode[0][0]; // units of HEX counter
-// assign LED[2] = ~segcathode[0][1]; // tens  of HEX counter
+assign LED[2] = ~segcathode[1][2]; // units of HEX counter
+assign LED[3] = ~segcathode[1][3]; // tens  of HEX counter
 
 
 endmodule // top_2displays_counters
