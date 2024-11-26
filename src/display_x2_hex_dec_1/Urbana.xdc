@@ -1,15 +1,15 @@
-# URBANA BOARD CONSTRAINTS V2I1 1/3/2023 
+# URBANA BOARD CONSTRAINTS V2I1 1/3/2023
 # clk input is from the 100 MHz oscillator on Urbana board
 create_clock -period 10.000 -name gclk [get_ports clk]
-set_property -dict {PACKAGE_PIN N15 IOSTANDARD LVCMOS33} [get_ports {clk}]
+set_property -dict {PACKAGE_PIN N15 IOSTANDARD LVCMOS33} [get_ports clk]
 
 # Set Bank 0 voltage
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
-set_property BITSTREAM.Config.SPI_buswidth 4 [current_design]
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
 
 # On-board Slide Switches
-set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS25} [get_ports {CPU_RESETN}]
+set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS25} [get_ports CPU_RESETN]
 # set_property -dict {PACKAGE_PIN F2 IOSTANDARD LVCMOS25} [get_ports {SW[1]}]
 # set_property -dict {PACKAGE_PIN F1 IOSTANDARD LVCMOS25} [get_ports {SW[2]}]
 # set_property -dict {PACKAGE_PIN E2 IOSTANDARD LVCMOS25} [get_ports {SW[3]}]
@@ -48,7 +48,7 @@ set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS25} [get_ports {CPU_RESETN}]
 # set_property -dict {PACKAGE_PIN J2 IOSTANDARD LVCMOS25} [get_ports {BTN[0]}]
 # set_property -dict {PACKAGE_PIN J1 IOSTANDARD LVCMOS25} [get_ports {BTN[1]}]
 # set_property -dict {PACKAGE_PIN G2 IOSTANDARD LVCMOS25} [get_ports {BTN[2]}]
-set_property -dict {PACKAGE_PIN H2 IOSTANDARD LVCMOS25} [get_ports {BTNC}]
+set_property -dict {PACKAGE_PIN H2 IOSTANDARD LVCMOS25} [get_ports BTNC]
 
 # On-board color LEDs
 # set_property -dict {PACKAGE_PIN C9 IOSTANDARD LVCMOS33} [get_ports {RGB0[0]}];   # RBG0_R
@@ -59,34 +59,34 @@ set_property -dict {PACKAGE_PIN H2 IOSTANDARD LVCMOS25} [get_ports {BTNC}]
 # set_property -dict {PACKAGE_PIN B11 IOSTANDARD LVCMOS33} [get_ports {RGB1[2]}];   # RBG1_B
 
 # On-board 7-Segment display 0
-set_property -dict {PACKAGE_PIN G6 IOSTANDARD LVCMOS25} [get_ports {anode[0][0]}];  # Active LOW
-set_property -dict {PACKAGE_PIN H6 IOSTANDARD LVCMOS25} [get_ports {anode[0][1]}];  # Active LOW
-set_property -dict {PACKAGE_PIN C3 IOSTANDARD LVCMOS25} [get_ports {anode[0][2]}];  # Active LOW
-set_property -dict {PACKAGE_PIN B3 IOSTANDARD LVCMOS25} [get_ports {anode[0][3]}];  # Active LOW
+set_property -dict {PACKAGE_PIN G6 IOSTANDARD LVCMOS25} [get_ports {anode[0][0]}]
+set_property -dict {PACKAGE_PIN H6 IOSTANDARD LVCMOS25} [get_ports {anode[0][1]}]
+set_property -dict {PACKAGE_PIN C3 IOSTANDARD LVCMOS25} [get_ports {anode[0][2]}]
+set_property -dict {PACKAGE_PIN B3 IOSTANDARD LVCMOS25} [get_ports {anode[0][3]}]
 # On-board 7-Segment display 1
-set_property -dict {PACKAGE_PIN E4 IOSTANDARD LVCMOS25} [get_ports {anode[1][0]}];  # 0 Active LOW
-set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS25} [get_ports {anode[1][1]}];  # 1 Active LOW
-set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS25} [get_ports {anode[1][2]}];  # 2 Active LOW
-set_property -dict {PACKAGE_PIN H5 IOSTANDARD LVCMOS25} [get_ports {anode[1][3]}];  # 3 Active LOW
+set_property -dict {PACKAGE_PIN E4 IOSTANDARD LVCMOS25} [get_ports {anode[1][0]}]
+set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS25} [get_ports {anode[1][1]}]
+set_property -dict {PACKAGE_PIN F5 IOSTANDARD LVCMOS25} [get_ports {anode[1][2]}]
+set_property -dict {PACKAGE_PIN H5 IOSTANDARD LVCMOS25} [get_ports {anode[1][3]}]
 
 # On-board 7-Segment display 0
-set_property -dict {PACKAGE_PIN E6 IOSTANDARD LVCMOS25} [get_ports {cathode[0][0]}];  # CA Active LOW
-set_property -dict {PACKAGE_PIN B4 IOSTANDARD LVCMOS25} [get_ports {cathode[0][1]}];  # CB Active LOW
-set_property -dict {PACKAGE_PIN D5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][2]}];  # CC Active LOW
-set_property -dict {PACKAGE_PIN C5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][3]}];  # CD Active LOW
-set_property -dict {PACKAGE_PIN D7 IOSTANDARD LVCMOS25} [get_ports {cathode[0][4]}];  # CE Active LOW
-set_property -dict {PACKAGE_PIN D6 IOSTANDARD LVCMOS25} [get_ports {cathode[0][5]}];  # CF Active LOW
-set_property -dict {PACKAGE_PIN C4 IOSTANDARD LVCMOS25} [get_ports {cathode[0][6]}];  # CG Active LOW
-set_property -dict {PACKAGE_PIN B5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][7]}];  # CDP Active LOW
+set_property -dict {PACKAGE_PIN E6 IOSTANDARD LVCMOS25} [get_ports {cathode[0][0]}]
+set_property -dict {PACKAGE_PIN B4 IOSTANDARD LVCMOS25} [get_ports {cathode[0][1]}]
+set_property -dict {PACKAGE_PIN D5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][2]}]
+set_property -dict {PACKAGE_PIN C5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][3]}]
+set_property -dict {PACKAGE_PIN D7 IOSTANDARD LVCMOS25} [get_ports {cathode[0][4]}]
+set_property -dict {PACKAGE_PIN D6 IOSTANDARD LVCMOS25} [get_ports {cathode[0][5]}]
+set_property -dict {PACKAGE_PIN C4 IOSTANDARD LVCMOS25} [get_ports {cathode[0][6]}]
+set_property -dict {PACKAGE_PIN B5 IOSTANDARD LVCMOS25} [get_ports {cathode[0][7]}]
 # On-board 7-Segment display 1
-set_property -dict {PACKAGE_PIN F3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][0]}];  # CA Active LOW
-set_property -dict {PACKAGE_PIN G5 IOSTANDARD LVCMOS25} [get_ports {cathode[1][1]}];  # CB Active LOW
-set_property -dict {PACKAGE_PIN J3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][2]}];  # CC Active LOW
-set_property -dict {PACKAGE_PIN H4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][3]}];  # CD Active LOW
-set_property -dict {PACKAGE_PIN F4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][4]}];  # CE Active LOW
-set_property -dict {PACKAGE_PIN H3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][5]}];  # CF Active LOW
-set_property -dict {PACKAGE_PIN E5 IOSTANDARD LVCMOS25} [get_ports {cathode[1][6]}];  # CG Active LOW
-set_property -dict {PACKAGE_PIN J4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][7]}];  # CDP Active LOW
+set_property -dict {PACKAGE_PIN F3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][0]}]
+set_property -dict {PACKAGE_PIN G5 IOSTANDARD LVCMOS25} [get_ports {cathode[1][1]}]
+set_property -dict {PACKAGE_PIN J3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][2]}]
+set_property -dict {PACKAGE_PIN H4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][3]}]
+set_property -dict {PACKAGE_PIN F4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][4]}]
+set_property -dict {PACKAGE_PIN H3 IOSTANDARD LVCMOS25} [get_ports {cathode[1][5]}]
+set_property -dict {PACKAGE_PIN E5 IOSTANDARD LVCMOS25} [get_ports {cathode[1][6]}]
+set_property -dict {PACKAGE_PIN J4 IOSTANDARD LVCMOS25} [get_ports {cathode[1][7]}]
 
 
 # #HDMI Signals
@@ -470,3 +470,51 @@ set_property BITSTREAM.CONFIG.UNUSEDPIN PULLDOWN [current_design]
 set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]
 
 
+
+
+create_debug_core u_ila_0 ila
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property port_width 1 [get_debug_ports u_ila_0/clk]
+connect_debug_port u_ila_0/clk [get_nets [list clk_IBUF_BUFG]]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+set_property port_width 8 [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {btnClean/g_CLOCK.button_debouncer[0]} {btnClean/g_CLOCK.button_debouncer[1]} {btnClean/g_CLOCK.button_debouncer[2]} {btnClean/g_CLOCK.button_debouncer[3]} {btnClean/g_CLOCK.button_debouncer[4]} {btnClean/g_CLOCK.button_debouncer[5]} {btnClean/g_CLOCK.button_debouncer[6]} {btnClean/g_CLOCK.button_debouncer[7]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+set_property port_width 2 [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {btnClean/g_CLOCK.button_sync[1]} {btnClean/g_CLOCK.button_sync[2]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+set_property port_width 4 [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {encoded_reg[2][0]} {encoded_reg[2][1]} {encoded_reg[2][2]} {encoded_reg[2][3]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+set_property port_width 4 [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list {encoded_reg[3][0]} {encoded_reg[3][1]} {encoded_reg[3][2]} {encoded_reg[3][3]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+set_property port_width 4 [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list {encoded_reg[1][0]} {encoded_reg[1][1]} {encoded_reg[1][2]} {encoded_reg[1][3]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+set_property port_width 4 [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list {encoded_reg[0][0]} {encoded_reg[0][1]} {encoded_reg[0][2]} {encoded_reg[0][3]}]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+set_property port_width 1 [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list button_down]]
+create_debug_port u_ila_0 probe
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe7]
+set_property port_width 1 [get_debug_ports u_ila_0/probe7]
+connect_debug_port u_ila_0/probe7 [get_nets [list btnClean/g_CLOCK.counter_en]]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets clk_IBUF_BUFG]
