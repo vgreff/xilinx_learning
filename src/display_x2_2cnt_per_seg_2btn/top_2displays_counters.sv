@@ -63,7 +63,7 @@ endgenerate
 
 //---------  counter outputs -------------------------
 parameter COUNTERS_PER_SEGMMENT = (NUM_SEGMENTS / COUNTER_WITDH);
-parameter NUM_COUNTERS = COUNTERS_PER_SEGMMENT * 2;
+parameter NUM_COUNTERS = COUNTERS_PER_SEGMMENT * 2; // 2=NUM_DISPLAYS
 
 logic [COUNTER_WITDH-1:0][3:0]       encodedc[NUM_COUNTERS];
 logic [COUNTER_WITDH-1:0]            digit_pointc[NUM_COUNTERS];
@@ -85,7 +85,7 @@ counter
     .clk(clk),
     .reset(reset),
     .button_down(button_down[i]),
-    .encoded(encodedc[2*i]),
+    .encoded(encodedc[2*i]),  // 2=COUNTERS_PER_SEGMMENT
     .digit_point(digit_pointc[2*i])
    );
 

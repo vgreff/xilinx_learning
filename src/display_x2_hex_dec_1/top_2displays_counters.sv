@@ -15,7 +15,7 @@ module top_2displays_counters
    parameter NUM_COUNTERS = 2,
    parameter CLK_PER      = 10,   // Clock period in ns
    parameter REFR_RATE    = 1000, // Refresh rate in Hz
-   parameter ASYNC_BUTTON = "SAFE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
+   parameter ASYNC_BUTTON = "DEBOUNCE" // "CLOCK", "NOCLOCK", "SAFE", "DEBOUNCE"
    )
   (
     input wire                                          clk,
